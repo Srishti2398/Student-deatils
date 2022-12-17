@@ -1,0 +1,6 @@
+services:
+  student_detail.event_subscriber:
+    class: Drupal\student_detail\EventSubscriber\StudentDetailSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }

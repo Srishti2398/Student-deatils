@@ -1,0 +1,4 @@
+administer student_detail configuration:
+  title: 'Administer student_detail configuration'
+  description: 'Optional description.'
+  restrict access: true

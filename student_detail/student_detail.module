@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for student_detail module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+ 
+  /**
+   *
+   */
+function getStudentList() {
+    $header = [
+      'name' => $this->t('Student Name'),
+      'email' => $this->t('Email Id'),
+      'state' => $this->t('State'),
+      'city' => $this->t('City'),
+      'passing_year' => $this->t('Passing Year'),
+      'Score' => $this->t('Score'),
+      'dob' => $this->t('dob'),
+    ];
+    $query = $this->entityTypeManager->getStorage('node')->getQuery();
+    $query->sort('field_score', 'DESC');
+    $nids = $query->condition('type', 'student_details')->execute();
+    foreach ($nids as $nid) {
+      $node = $this->entityTypeManager->getStorage('node')->load($nid);
+      $year = $node->field_passing_year->getString();
+      $dob = $node->field_dob->getString();
+      $newDob = date("jS M Y", strtotime($dob));
+      $score = $node->field_score->getString();
+      $rows[] = [
+        'name' => $node->field_student_name->getString(),
+        'email' => $node->field_email->getString(),
+        'state' => $node->field_state->getString(),
+        'city' => $node->field_city->getString(),
+        'passing_year' => $year,
+        'Score' => $score,
+        'dob' => $newDob,
+      ];
+      $formData['table'] = [
+        '#type' => 'table',
+        '#header' => $header,
+        '#rows' => $rows,
+      ];
+
+    }
+    return $formData;
+
+  }

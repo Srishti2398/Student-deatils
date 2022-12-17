@@ -1,0 +1,39 @@
+student_detail.example:
+  path: '/student-detail/showdetail'
+  defaults:
+    _title: 'Student Details'
+    _controller: '\Drupal\student_detail\Controller\StudentDetailController::showStudentDetails'
+  requirements:
+    _permission: 'access content'
+
+top_student_detail.example:
+  path: '/top-student-detail/topstudentdetail'
+  defaults:
+    _title: 'Top Student Details'
+    _controller: '\Drupal\student_detail\Controller\StudentDetailController::topStudentList'
+  requirements:
+    _permission: 'access content'
+
+top_student_detail.statewise:
+  path: '/top-student-detail/statewise'
+  defaults:
+    _title: 'Top Student Details'
+    _controller: '\Drupal\student_detail\Controller\StudentDetailController::topStudentListStateWise'
+  requirements:
+    _permission: 'access content'
+
+student_detail.settings_form:
+  path: '/admin/config/system/student-detail'
+  defaults:
+    _title: 'student_detail settings'
+    _form: 'Drupal\student_detail\Form\SettingsForm'
+  requirements:
+    _permission: 'administer student_detail configuration'
+    
+student_detail.display_form:
+  path: '/student-detail/form/student-data'
+  defaults:
+    _title: 'Top student Detail with Filter'
+    _form: 'Drupal\student_detail\Form\StudentDetailForm'
+  requirements:
+    _permission: 'administer student_detail configuration'

@@ -1,0 +1,6 @@
+name: student_detail
+type: module
+description: Student Details
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

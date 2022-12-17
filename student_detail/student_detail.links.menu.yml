@@ -1,0 +1,6 @@
+student_detail.settings_form:
+  title: student_detail
+  description: Configure student_detail.
+  parent: system.admin_config_system
+  route_name: student_detail.settings_form
+  weight: 10
