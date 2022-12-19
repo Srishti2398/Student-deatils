@@ -1,0 +1,6 @@
+product_data.settings_form:
+  title: product_data
+  description: Configure product_data.
+  parent: system.admin_config_system
+  route_name: product_data.settings_form
+  weight: 10

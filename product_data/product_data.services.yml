@@ -1,0 +1,6 @@
+services:
+  product_data.event_subscriber:
+    class: Drupal\product_data\EventSubscriber\ProductDataSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }

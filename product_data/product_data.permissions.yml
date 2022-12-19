@@ -1,0 +1,4 @@
+administer product_data configuration:
+  title: 'Administer product_data configuration'
+  description: 'Optional description.'
+  restrict access: true

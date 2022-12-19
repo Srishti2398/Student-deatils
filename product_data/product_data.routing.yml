@@ -1,0 +1,40 @@
+product_data.example:
+  path: '/product-data/show-product-detail'
+  defaults:
+    _title: 'Product Details'
+    _controller: '\Drupal\product_data\Controller\ProductDataController::display'
+  requirements:
+    _permission: 'access content'
+
+product_data.details:
+  path: '/product-data/product-detail'
+  defaults:
+    _title: 'Product Details'
+    _controller: '\Drupal\product_data\Controller\ProductDataController::sortedProductDetails'
+  requirements:
+    _permission: 'access content'
+
+productdata.product_form:
+  path: '/product-data/form/product-data'
+  defaults:
+    _form: '\Drupal\product_data\Form\ProductDataForm'
+    _title: 'Product Data Form'
+  requirements:
+    _access: 'TRUE'
+
+
+product_data.settings_form:
+  path: '/admin/config/system/product-data'
+  defaults:
+    _title: 'product_data settings'
+    _form: 'Drupal\product_data\Form\SettingsForm'
+  requirements:
+    _permission: 'administer product_data configuration'
+
+product_data.delete_form:
+  path: '/product-data/{id}/delete'
+  defaults:
+    _form: '\Drupal\product_data\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
